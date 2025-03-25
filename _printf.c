@@ -49,10 +49,17 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(args, char *);
 				int j = 0;
+
+				if (str == NULL)
+				{
+					str = "(null)";
+				}
+
+
 				while (str[j] != '\0')
 				{
 					write(1, &str[j], 1);
-					word_count++;
+					word_count += 1;
 					j++;
 				}
 
