@@ -70,17 +70,23 @@ int _printf(const char *format, ...)
 				}
 
 			}
+
+			else
+			{
+				write(1, &format[i - 1], 1);
+				write(1, &format[i], 1);
+				word_count += 2;
+			}
+			i++;
 		}
-		else
+		else 
 		{
-			write(1, &format[i - 1], 1);
 			write(1, &format[i], 1);
-			word_count += 2;
-
+			word_count += 1;
+			i++;
 		}
-		i++;
-
 	}
-	va_end(args);
-	return (word_count);
+			va_end(args);
+			return (word_count);
+		
 }
