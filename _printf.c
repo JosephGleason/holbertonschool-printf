@@ -127,6 +127,28 @@ int _printf(const char *format, ...)
 				word_count += print_binary(num);
 			}
 
+			else if (format[i] == 'u')
+			{
+				unsigned int num = va_arg(args, unsigned int);
+				word_count += print_unsigned_base(num, 10, 0); /* base 10, lowercase */
+			}
+			else if (format[i] == 'o')
+			{
+				unsigned int num = va_arg(args, unsigned int);
+				word_count += print_unsigned_base(num, 8, 0); /* base 8, lowercase */
+			}
+			else if (format[i] == 'x')
+			{
+				unsigned int num = va_arg(args, unsigned int);
+				word_count += print_unsigned_base(num, 16, 0); /* base 16, lowercase */
+			}
+			else if (format[i] == 'X')
+			{
+				unsigned int num = va_arg(args, unsigned int);
+				word_count += print_unsigned_base(num, 16, 1); /* base 16, UPPERCASE */
+			}
+
+
 			else
 			{
 				write(1, &format[i - 1], 1);
