@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include "main.h"
 /**
  * print_number - Prints an integer to stdout
  * @n: The integer to print
@@ -118,6 +119,12 @@ int _printf(const char *format, ...)
 			{
 				int num = va_arg(args, int);
 				word_count += print_number(num);
+			}
+
+			else if (format[i] == 'b')
+			{
+				unsigned int num = va_arg(args, unsigned int);
+				word_count += print_binary(num);
 			}
 
 			else
