@@ -1,5 +1,3 @@
-#include <unistd.h>
-#include <stdarg.h>
 #include "main.h"
 /**
  * print_unsigned_base - converts unsigned int to any base

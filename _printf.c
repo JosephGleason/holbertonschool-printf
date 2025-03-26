@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
 /**
  * print_number - Prints an integer to stdout
  * @n: The integer to print
@@ -130,7 +127,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 'u')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 10, 0); /* base 10, lowercase */
+				word_count += print_unsigned_base(num, 10, 0);
 			}
 			else if (format[i] == 'o')
 			{
@@ -147,8 +144,6 @@ int _printf(const char *format, ...)
 				unsigned int num = va_arg(args, unsigned int);
 				word_count += print_unsigned_base(num, 16, 1); /* base 16, UPPERCASE */
 			}
-
-
 			else
 			{
 				write(1, &format[i - 1], 1);
@@ -157,7 +152,7 @@ int _printf(const char *format, ...)
 			}
 			i++;
 		}
-		else 
+		else
 		{
 			write(1, &format[i], 1);
 			word_count += 1;
