@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_binary - Custom printf implementation to handle various format specifiers.
+* print_binary - Custom printf implementation to handle various format specifiers.
  * @format: The format string containing the characters & specifiers to print.
  *
  * Return: The total number of characters printed

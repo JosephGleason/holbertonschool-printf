@@ -132,17 +132,17 @@ int _printf(const char *format, ...)
 			else if (format[i] == 'o')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 8, 0); /* base 8, lowercase */
+				word_count += print_unsigned_base(num, 8, 0); 
 			}
 			else if (format[i] == 'x')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 16, 0); /* base 16, lowercase */
+				word_count += print_unsigned_base(num, 16, 0); 
 			}
 			else if (format[i] == 'X')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 16, 1); /* base 16, UPPERCASE */
+				word_count += print_unsigned_base(num, 16, 1);
 			}
 			else
 			{
