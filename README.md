@@ -90,7 +90,7 @@ int main(void)
 ## ✍️ Authors
 
 - **Joseph Gleason Lopez** – [@JosephGleason](https://github.com/JosephGleason)
-- **Kevin Santos** – [@HISvessel](https://github.com/HISvessel)
+- **Kevin Sanchez** – [@HISvessel](https://github.com/HISvessel)
 
 ---
 
