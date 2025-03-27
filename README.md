@@ -31,11 +31,16 @@ This implementation handles the following format specifiers:
 
 ## 📁 Project Structure
 
-. ├── _printf.c ├── call_handler.c ├── handlers.c ├── helpers.c ├── main.h ├── main.c (for testing) ├── README.md
-
-yaml
-Copy
-Edit
+```
+.
+├── _printf.c
+├── call_handler.c
+├── handlers.c
+├── helpers.c
+├── main.h
+├── main.c       (for testing)
+├── README.md
+```
 
 ---
 
@@ -45,10 +50,13 @@ Compile all files using:
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
-🧪 Example Usage
-c
-Copy
-Edit
+```
+
+---
+
+## 🧪 Example Usage
+
+```c
 #include "main.h"
 
 int main(void)
@@ -64,41 +72,29 @@ int main(void)
     _printf("Binary: %b\n", 98);
     return (0);
 }
-✅ Requirements
-Allowed editors: vi, vim, emacs
-
-Compilation: gcc -Wall -Werror -Wextra -pedantic -std=gnu89
-
-No global variables
-
-Max 5 functions per file
-
-Max 40 lines per function
-
-Betty coding style
-
-✍️ Authors
-Joseph Gleason Lopez – @JosephGleason
-
-Kevin Santos – @HISvessel
-
-ChatGPT – Technical guidance and formatting (assistant)
-
-📜 License
-This project is open-source and available under the MIT License.
-
-yaml
-Copy
-Edit
+```
 
 ---
 
-## ✅ Now do this:
+## ✅ Requirements
 
-1. Create a file called `README.md`
-2. Paste the entire content above into it
-3. Save and commit it to GitHub
+- Allowed editors: `vi`, `vim`, `emacs`
+- Compilation: `gcc -Wall -Werror -Wextra -pedantic -std=gnu89`
+- No global variables
+- Max 5 functions per file
+- Max 40 lines per function
+- Betty coding style
 
-GitHub will render it perfectly. No emojis breaking things. No copy-paste issues. Just clean, readable markdown.
+---
 
-Want me to generate a `main.c` test file or `.gitignore` too?
+## ✍️ Authors
+
+- **Joseph Gleason Lopez** – [@JosephGleason](https://github.com/JosephGleason)
+- **Kevin Santos** – [@HISvessel](https://github.com/HISvessel)
+
+---
+
+## 📜 License
+
+This project is open-source baby.
+
