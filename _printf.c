@@ -1,49 +1,5 @@
 #include "main.h"
 /**
- * print_number - Prints an integer to stdout
- * @n: The integer to print
- *
- * Return: Number of characters printed
- */
-int print_number(int n)
-{
-	char buffer[12]; /* enough to hold -2147483648\0 */
-	int i = 0, j, count = 0;
-	unsigned int num;
-
-	if (n == 0)
-	{
-		write(1, "0", 1);
-		return (1);
-	}
-
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		count++;
-		num = -n;
-	}
-	else
-	{
-		num = n;
-	}
-
-	while (num > 0)
-	{
-		buffer[i++] = (num % 10) + '0';
-		num = num / 10;
-	}
-
-	for (j = i - 1; j >= 0; j--)
-	{
-		write(1, &buffer[j], 1);
-		count++;
-	}
-
-	return (count);
-}
-
-/**
  * _printf - Produces output according to a format.
  * @format: The format string.
  *
@@ -61,7 +17,7 @@ int _printf(const char *format, ...)
 	}
 
 
-	va_start (args, format);
+	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
@@ -83,7 +39,7 @@ int _printf(const char *format, ...)
 
 			else if (format[i] == 'c')
 			{
-				/* Retrieve the next argument, which is promoted to int, then cast to char */
+				/* Retrieve the next arg, which is promoted to int, then cast to char */
 				char ch = (char)va_arg(args, int);
 
 				/* Write the character to stdout */
@@ -115,33 +71,38 @@ int _printf(const char *format, ...)
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
 				int num = va_arg(args, int);
+
 				word_count += print_number(num);
 			}
-
 			else if (format[i] == 'b')
 			{
 				unsigned int num = va_arg(args, unsigned int);
+
 				word_count += print_binary(num);
 			}
 
 			else if (format[i] == 'u')
 			{
 				unsigned int num = va_arg(args, unsigned int);
+
 				word_count += print_unsigned_base(num, 10, 0);
 			}
 			else if (format[i] == 'o')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 8, 0); 
+
+				word_count += print_unsigned_base(num, 8, 0);
 			}
 			else if (format[i] == 'x')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-				word_count += print_unsigned_base(num, 16, 0); 
+
+				word_count += print_unsigned_base(num, 16, 0);
 			}
 			else if (format[i] == 'X')
 			{
 				unsigned int num = va_arg(args, unsigned int);
+
 				word_count += print_unsigned_base(num, 16, 1);
 			}
 			else
