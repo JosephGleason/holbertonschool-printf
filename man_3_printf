@@ -1,0 +1,71 @@
+.\" Man page for _printf.
+.\" contact Gleason, Joseph and Sanchez, Kevin to correct errors or typos
+.TH man 3 "27 March 2025" "1.0" "_printf man page"
+.SH NAME
+_printf \- Prints into format string
+.SH SYNOPSIS 
+.BI _printf [FORMAT, ARGUMENTS]
+.SH DESCRIPTION
+_printf is a custom implementation of the Standard .C printf function. It formats and prints data to standard output according to a format string.
+Supported format speccifiers include:
+.TP %c Prints a single char.
+.TP %s Prints a string.
+.TP %i Prints an integer
+.TP %u Prints an unsigned integer
+.TP %o Prints an unsigned octal integer
+.TP %x Prints an integer in lowercase hexadecimal
+.TP %X Prints an integer in uppercase hexadecimal
+.SH OPTIONS
+.TP
+%c - Prints a single char
+.TP
+%s - Prints a string
+.TP
+%i - Prints an integer
+.TP
+%u - Prints an unsigned integer
+.TP
+%o - Prints an unsigned octal integer
+.TP
+%x - Prints hexadecimal in lowercase
+.TP
+%X - Prints a hexadecimal in uppercase
+.SH FUNCTIONS
+.TP 
+int handle_char(va_list args) - Handles the %c format specifier
+.TP 
+int handle_string(va_list args) - Handles the %s format specifier
+.TP 
+int handle_percent(va_list args) - Handles the %% format specifier
+.TP 
+int handle_int(va_list args) - Handles the &d and &i format specifier
+.TP 
+int handle_unsigned(va_list args) - Handles the %u format specifier
+.TP
+int handle_binary(va_list args) - Handles the %b format specifier
+.TP
+int handle_octal(va_list args) - Handles the %o format specifier
+.TP
+int handle_hex_lower(va_list args) - Handles the %x format specifier
+.TP
+int handle_hex_upper(va_list args) - Handles the %X format specifier
+.TP
+int print_number(va_list args) - Prints a signed integer
+.TP
+int print_binary(unsigned int num) - Prints the binary representation of an unsigned integer
+.TP
+int print_unsigned_base(int num, int base, int uppercase) - Prints an unsigned integer on its respective base(e.g., decimal, hexadecimal, octal)
+.SH RETURN 
+Returns -1 if 
+.I format is NULL
+.SH EXAMPLES
+_printf("Hello, %s\\n", "world");
+.RS
+Output :
+.I Hello, World!
+.SH SEE ALSO
+printf(1)
+.SH BUGS
+No known bugs.
+.SH AUTHOR(s)
+Gleason, Joseph(joeg1834@gmail.com) Sanchez, Kevin(kevinsanchezdabest@yahoo.com)
